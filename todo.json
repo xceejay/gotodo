@@ -1,0 +1,23 @@
+{
+  "dates": [
+    {
+      "date": "2020-06-21",
+      "time": {
+        "23:49:49": "eat food",
+        "23:53:53": "drnk food",
+        "23:54:54": "swallow panini"
+      },
+      "repeat": true
+    },
+    {
+      "date": "2020-06-22",
+      "time": {
+        "23:49:49": "dance to salsa",
+        "23:52:53": "dance to azonto",
+        "23:01:54": "dance to abdjza",
+        "23:53:21": "dance to biff"
+      },
+      "repeat": false
+    }
+  ]
+}
