@@ -1,1 +1,4 @@
-started in background with $XDG_CONFIG_HOME/todo.json
+file:
+this file : 
+gotodo: configuration file must be json
+

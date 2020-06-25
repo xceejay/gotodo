@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/urfave/cli"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
+
+	"github.com/urfave/cli"
 	//"syscall"
 	//"unsafe"
 )
@@ -39,7 +41,6 @@ import (
 //}
 
 func main() {
-	notify()
 	app := &cli.App{
 		Name:  "gotodo",
 		Usage: "todo daemon and reminder",
@@ -48,7 +49,7 @@ func main() {
 				Name:    "start",
 				Usage:   "start the reminder daemon with the todo file",
 				Aliases: []string{"s"},
-				Value:   "$XDG_CONFIG_HOME/todo.json",
+				//Value:   "$XDG_CONFIG_HOME/todo.json",
 				//EnvVars:  []string{"XDG_CONFIG_HOME"},
 				TakesFile: true,
 			},
@@ -56,21 +57,22 @@ func main() {
 		Action: func(c *cli.Context) error {
 
 			configfile := c.String("start")
+
+			if strings.HasSuffix(configfile, ".json") {
+				fmt.Printf("file:" + configfile)
+				fmt.Println("\nthis file : " + filepath.Ext(configfile))
+				return cli.Exit("gotodo: configuration file must be json\n", 0)
+			}
+
 			if filepath.Ext(c.Args().First()) == ".json" {
 				if len(c.String("")) == 0 {
 					fmt.Printf("starting in foreground with %s\n", c.Args().Get(0))
 					start(c.Args().First())
-				} else if len(c.String("start")) > 0 {
-					fmt.Printf("started in foreground with %s\n", c.Args().First())
-					start(configfile)
 				}
 			} else if filepath.Ext(c.String("start")) == ".json" {
-				fmt.Printf("started in background with %s\n", c.String("start"))
 				startservice(configfile)
-			} else {
-				return cli.Exit("gotodo: configuration file must be json\n", 0)
+				//fmt.Printf("started in background with %s\n", c.String("start"))
 			}
-
 			return nil
 		},
 	}

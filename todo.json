@@ -1,17 +1,31 @@
 {
   "dates": [
     {
-      "date": "2020-06-21",
+      "date": "2020-06-23",
       "time": {
-        "23:49:49": "eat food",
-        "23:53:53": "drnk food",
-        "23:54:54": "swallow panini"
+        "08:00:00": "Drink Water🥛",
+        "09:00:00": "Drink Water🥛",
+        "10:00:00": "Drink Water🥛",
+        "11:00:00": "Drink Water🥛",
+        "12:00:00": "Drink Water🥛",
+        "13:00:00": "Drink Water🥛",
+        "14:00:00": "Drink Water🥛",
+        "15:00:00": "Drink Water🥛",
+        "16:00:00": "Drink Water🥛",
+        "17:00:00": "Drink Water🥛",
+        "18:00:00": "Drink Water🥛",
+        "19:00:00": "Drink Water🥛",
+        "20:00:00": "Drink Water🥛",
+        "21:00:00": "Drink Water🥛",
+        "22:00:00": "Drink Water🥛",
+        "23:00:00": "Drink Water🥛"
       },
       "repeat": true
     },
     {
-      "date": "2020-06-22",
+      "date": "2020-06-23",
       "time": {
+        "22:49:49": "dance to salsa",
         "23:49:49": "dance to salsa",
         "23:52:53": "dance to azonto",
         "23:01:54": "dance to abdjza",
